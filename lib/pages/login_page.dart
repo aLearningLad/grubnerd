@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:grubnerdapp/components/my_button.dart';
 import 'package:grubnerdapp/components/my_textfield.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  void onTap() {}
 
   LoginPage({super.key});
 
@@ -41,16 +44,50 @@ class LoginPage extends StatelessWidget {
               obscureText: false,
             ),
 
+            SizedBox(
+              height: 10,
+            ),
+
             // password textfield
             MyTextField(
-              controller: emailController,
+              controller: passwordController,
               hintText: "Password",
               obscureText: true, //will hide characters as password is entered
             ),
 
+            SizedBox(height: 10),
+
             // sign in button
+            MyButton(
+              text: "Sign In",
+              onTap: onTap,
+            ),
+
+            SizedBox(
+              height: 10,
+            ),
 
             // not a member? register now
+            GestureDetector(
+              onTap: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Not a member?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary),
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    "Register now",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
