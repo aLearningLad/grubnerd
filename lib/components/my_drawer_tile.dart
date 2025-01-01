@@ -10,6 +10,19 @@ class MyDrawerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: ListTile(
+        title: Text(
+          text,
+          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+        ),
+        leading: Icon(
+          icon,
+          color: Colors.black,
+        ),
+        onTap: onTap,
+      ),
+    );
   }
 }
