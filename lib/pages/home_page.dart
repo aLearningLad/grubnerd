@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grubnerdapp/components/my_current_location.dart';
 import 'package:grubnerdapp/components/my_drawer.dart';
 import 'package:grubnerdapp/components/my_sliver_app_bar.dart';
 
@@ -17,7 +18,21 @@ class _HomePageState extends State<HomePage> {
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySliverAppBar(
-            child: Text('Hello there!'),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Divider(
+                  indent: 25,
+                  endIndent: 25,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+
+                // current location
+                MyCurrentLocation(),
+
+                // description box
+              ],
+            ),
             title: Text('title here'),
           )
         ],
