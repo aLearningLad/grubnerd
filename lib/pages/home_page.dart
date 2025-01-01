@@ -15,8 +15,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           "Grub Nerd",
-          // textAlign: TextAlign.center,
         ),
+        backgroundColor: Theme.of(context).colorScheme.background,
       ),
       drawer: MyDrawer(),
     );
