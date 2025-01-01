@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:grubnerdapp/components/my_button.dart';
 import 'package:grubnerdapp/components/my_textfield.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
 
-  const LoginPage({super.key, required this.onTap});
+  const RegisterPage({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmpasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
 
             // message, app slogan
             Text(
-              "Grud Nerd",
+              "Let's get started with your new account",
               style: TextStyle(
                   fontSize: 16,
                   color: Theme.of(context).colorScheme.inversePrimary),
@@ -62,9 +64,18 @@ class _LoginPageState extends State<LoginPage> {
 
             SizedBox(height: 10),
 
-            // sign in button
+            // confirm password
+            MyTextField(
+              controller: passwordController,
+              hintText: "Confirm password",
+              obscureText: true, //will hide characters as password is entered
+            ),
+
+            SizedBox(height: 10),
+
+            // sign up button
             MyButton(
-              text: "Sign In",
+              text: "Sign Up",
               onTap: () {},
             ),
 
@@ -72,20 +83,20 @@ class _LoginPageState extends State<LoginPage> {
               height: 10,
             ),
 
-            // not a member? register now
+            // already a member? login here
             GestureDetector(
               onTap: widget.onTap,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Not a member?",
+                    "Already a member?",
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.inversePrimary),
                   ),
                   SizedBox(width: 5),
                   Text(
-                    "Register now",
+                    "Login now",
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.inversePrimary,
                         fontWeight: FontWeight.bold),

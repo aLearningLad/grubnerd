@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grubnerdapp/auth/login_or_register.dart';
 import 'package:grubnerdapp/pages/login_page.dart';
+import 'package:grubnerdapp/pages/register_page.dart';
 import 'package:grubnerdapp/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -17,10 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Grub Nerd',
-      theme: Provider.of<ThemeProvider>(context).themeData,
-      home: LoginPage(),
-    );
+        title: 'Grub Nerd',
+        theme: Provider.of<ThemeProvider>(context).themeData,
+        home: LoginOrRegister());
   }
 }
 
