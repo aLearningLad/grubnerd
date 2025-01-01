@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grubnerdapp/components/my_drawer.dart';
+import 'package:grubnerdapp/components/my_sliver_app_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,13 +13,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Grub Nerd",
-        ),
-        backgroundColor: Theme.of(context).colorScheme.background,
-      ),
       drawer: MyDrawer(),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          MySliverAppBar(
+            child: Text('Hello there!'),
+            title: Text('title here'),
+          )
+        ],
+        body: Container(
+          color: Colors.blue,
+        ),
+      ),
     );
   }
 }
