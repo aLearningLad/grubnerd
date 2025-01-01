@@ -19,8 +19,12 @@ class MyCurrentLocation extends StatelessWidget {
                   MaterialButton(
                     onPressed: () => Navigator.pop(context),
                     child: Text("Cancel"),
-                  )
+                  ),
                   // save button
+                  MaterialButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text("Save"),
+                  )
                 ],
               ));
     }
