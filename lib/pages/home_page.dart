@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grubnerdapp/components/my_current_location.dart';
+import 'package:grubnerdapp/components/my_description_box.dart';
 import 'package:grubnerdapp/components/my_drawer.dart';
 import 'package:grubnerdapp/components/my_sliver_app_bar.dart';
 
@@ -31,6 +32,7 @@ class _HomePageState extends State<HomePage> {
                 MyCurrentLocation(),
 
                 // description box
+                MyDescriptionBox()
               ],
             ),
             title: Text('title here'),
