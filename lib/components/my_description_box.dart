@@ -8,7 +8,9 @@ class MyDescriptionBox extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(color: Theme.of(context).colorScheme.secondary)),
+      padding: EdgeInsets.all(20),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
 // delivery fee
           Column(
